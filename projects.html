@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Your Name</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">Harry New</a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="experience.html">Experience</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-header">
+    <span class="section-label">Work</span>
+    <h1 class="page-title">Projects</h1>
+    <p class="page-sub">A selection of things I've designed, built, and shipped.</p>
+  </header>
+
+  <!-- Filter tabs — add/remove categories to match your work -->
+  <div class="filter-bar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="product">Product Design</button>
+    <button class="filter-btn" data-filter="engineering">Engineering</button>
+    <button class="filter-btn" data-filter="research">Research</button>
+  </div>
+
+  <section class="projects-list">
+
+    <!-- Repeat this block for each project -->
+    <article class="project-item" data-category="product">
+      <div class="project-item-img placeholder"></div>
+      <div class="project-item-content">
+        <div class="project-meta">
+          <span class="project-tag">Product Design</span>
+          <span class="project-year">2025</span>
+        </div>
+        <h2>Project Title One</h2>
+        <p>
+          A concise overview of the project — the problem you were solving,
+          your role, and the approach you took. Keep it punchy: 2–3 sentences.
+        </p>
+        <ul class="project-skills">
+          <li>CAD</li>
+          <li>User Research</li>
+          <li>Prototyping</li>
+        </ul>
+        <a href="#" class="btn-primary">View Case Study →</a>
+      </div>
+    </article>
+
+    <article class="project-item" data-category="engineering">
+      <div class="project-item-img placeholder"></div>
+      <div class="project-item-content">
+        <div class="project-meta">
+          <span class="project-tag">Engineering</span>
+          <span class="project-year">2024</span>
+        </div>
+        <h2>Project Title Two</h2>
+        <p>
+          Short description of the project. What was the challenge,
+          what did you build, and what was the outcome?
+        </p>
+        <ul class="project-skills">
+          <li>FEA</li>
+          <li>Manufacturing</li>
+          <li>Systems Design</li>
+        </ul>
+        <a href="#" class="btn-primary">View Case Study →</a>
+      </div>
+    </article>
+
+    <article class="project-item" data-category="research">
+      <div class="project-item-img placeholder"></div>
+      <div class="project-item-content">
+        <div class="project-meta">
+          <span class="project-tag">Research</span>
+          <span class="project-year">2024</span>
+        </div>
+        <h2>Project Title Three</h2>
+        <p>
+          Short description of the project. What was the challenge,
+          what did you build, and what was the outcome?
+        </p>
+        <ul class="project-skills">
+          <li>User Interviews</li>
+          <li>Synthesis</li>
+          <li>Insight Generation</li>
+        </ul>
+        <a href="#" class="btn-primary">View Case Study →</a>
+      </div>
+    </article>
+
+  </section>
+
+  <footer class="footer">
+    <span>© 2026 Harry New</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/harry-new-02661025b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/hnewey7" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
