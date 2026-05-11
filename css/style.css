@@ -229,7 +229,7 @@ ul { list-style: none; }
 }
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-98.9%); }
 }
 
 /* Featured projects */
@@ -281,6 +281,13 @@ ul { list-style: none; }
   color: var(--accent);
   margin-bottom: 0.75rem;
 }
+.project-meta {
+  /* display: flex; */
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.00rem;
+}
+.project-year { font-size: 0.75rem; color: var(--ink-faint); }
 .project-card-info h3 {
   font-family: var(--font-serif);
   font-size: 1.4rem;
@@ -353,17 +360,10 @@ ul { list-style: none; }
 .project-item:nth-child(even) .project-item-img { order: 2; }
 .project-item:nth-child(even) .project-item-content { order: 1; }
 .project-item-img { aspect-ratio: 4/3; background: var(--surface); border: 1px solid var(--border); }
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 0.75rem;
-}
-.project-year { font-size: 0.75rem; color: var(--ink-faint); }
 .project-item-content h2 {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 3vw, 2.5rem);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 .project-item-content p { color: var(--ink-mid); margin-bottom: 1.5rem; }
 .project-skills {
