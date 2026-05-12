@@ -382,6 +382,238 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   CASE STUDY — projects/<slug>.html
+   ============================================================ */
+.case-study {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: calc(var(--nav-h) + 4rem) var(--gap) 4rem;
+}
+.case-back {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink-mid);
+  margin-bottom: 2rem;
+  transition: color 0.2s;
+}
+.case-back:hover { color: var(--accent); }
+.case-tag-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+.case-tag-line .dot-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--ink-faint);
+}
+.case-tag-line .case-year { color: var(--ink-faint); }
+.case-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 1rem;
+}
+.case-lead {
+  font-family: var(--font-serif);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-mid);
+  max-width: 60ch;
+  margin-bottom: 3rem;
+}
+.case-hero-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  margin-bottom: 4rem;
+}
+
+.case-meta {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4rem;
+}
+.case-meta-sidebar { display: flex; flex-direction: column; gap: 2rem; }
+.case-meta-block h4 {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+.case-meta-block p,
+.case-meta-block li {
+  color: var(--ink-mid);
+  font-size: 0.9rem;
+}
+.case-meta-block ul { display: flex; flex-direction: column; gap: 0.3rem; }
+.case-meta-overview h2 {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+.case-meta-overview p {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+.case-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.case-section h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  margin-bottom: 1.5rem;
+}
+.case-section p {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+  max-width: 68ch;
+}
+
+/* Section variant: text on the left, stacked media on the right */
+.case-section--with-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+.case-section--with-media .case-section-body p { max-width: none; }
+
+/* Variant: media on the left, text on the right, title above the media column */
+.case-section--with-media.case-section--media-left {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  grid-template-areas:
+    "title ."
+    "media body";
+  row-gap: 1.5rem;
+}
+.case-section--with-media.case-section--media-left > h2     { grid-area: title; margin-bottom: 0; }
+.case-section--with-media.case-section--media-left .case-section-media { grid-area: media; }
+.case-section--with-media.case-section--media-left .case-section-body  { grid-area: body; }
+
+/* Variant: stacked media+text pairs, each pair centred together,
+   with a single section title on the right above all pairs */
+.case-section--media-pairs {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  column-gap: 3rem;
+  row-gap: 3rem;
+}
+.case-section--media-pairs > h2 {
+  grid-column: 1;
+  margin-bottom: 0;
+}
+.case-section-pair {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  column-gap: 3rem;
+  align-items: center;
+}
+/* Pair variant: image on the right, text on the left */
+.case-section-pair--media-right {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+}
+.case-section-pair--media-right .case-section-body  { order: 1; }
+.case-section-pair--media-right .case-section-media { order: 2; }
+.case-section--media-pairs .case-section-body p { max-width: none; margin-bottom: 0; }
+
+.case-section-media {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.case-section-media img,
+.case-section-media video,
+.case-section-media .placeholder {
+  width: auto;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  image-rendering: auto;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  /* mix-blend-mode: multiply; */
+}
+
+/* Video placeholder variant — sits in any .placeholder slot */
+.placeholder--video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.case-gallery {
+  margin-bottom: 4rem;
+}
+.case-gallery h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.case-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+.case-gallery-grid img,
+.case-gallery-grid .placeholder {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.case-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 3rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.case-nav a {
+  color: var(--ink-mid);
+  transition: color 0.2s;
+}
+.case-nav a:hover { color: var(--accent); }
+.case-nav .disabled {
+  color: var(--ink-faint);
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* ============================================================
    EXPERIENCE — experience.html
    ============================================================ */
 .experience-section {
@@ -693,4 +925,17 @@ ul { list-style: none; }
   .contact-body { grid-template-columns: 1fr; }
   .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
   .nav-links { gap: 1rem; }
+  .case-meta { grid-template-columns: 1fr; gap: 2.5rem; }
+  .case-section--with-media { grid-template-columns: 1fr; gap: 2rem; }
+  .case-section--with-media.case-section--media-left {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "title"
+      "media"
+      "body";
+  }
+  .case-section--media-pairs { grid-template-columns: 1fr; row-gap: 2rem; }
+  .case-section-pair { grid-template-columns: 1fr; row-gap: 1.5rem; }
+  .case-section-pair--media-right .case-section-body,
+  .case-section-pair--media-right .case-section-media { order: unset; }
 }

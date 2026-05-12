@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Olympus Rover Trials — Harry New</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">Harry New</a>
+    <ul class="nav-links">
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../about.html">About</a></li>
+      <li><a href="../contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+  </nav>
+
+  <article class="case-study">
+
+    <a href="../projects.html" class="case-back">← All projects</a>
+
+    <div class="case-tag-line">
+      <span>Robotics</span>
+      <span class="dot-sep"></span>
+      <span class="case-year">2025</span>
+    </div>
+
+    <h1 class="case-title">Olympus Rover Trials</h1>
+
+    <p class="case-lead">
+      <!-- TODO: One- or two-sentence tagline that sums up the project. -->
+      Designing a competition rover to traverse the Airbus's Mars Yard.
+    </p>
+
+    <img class="case-hero-img" src="../assets/images/projects/rover/rover_new_16_9.png" alt="Render of Mars rover" />
+
+    <!-- ── Meta + Overview ────────────────────────────────────── -->
+    <section class="case-meta">
+      <aside class="case-meta-sidebar">
+        <div class="case-meta-block">
+          <h4>Role</h4>
+          <p>Principal Software Engineer &amp; Systems Lead</p>
+        </div>
+        <div class="case-meta-block">
+          <h4>Team</h4>
+          <p>5 people</p>
+          <p>Mechanical, Electrical & Software</p>
+        </div>
+        <div class="case-meta-block">
+          <h4>Year</h4>
+          <p>2025</p>
+        </div>
+        <div class="case-meta-block">
+          <h4>Stack</h4>
+          <ul>
+            <li>Flask (Python)</li>
+            <li>Simulink (MATLAB)</li>
+            <li>CoppeliaSim</li>
+          </ul>
+        </div>
+      </aside>
+
+      <div class="case-meta-overview">
+        <h2>Overview</h2>
+        <p>
+            Designed a competition rover to traverse Airbus's Mars Yard, scanning QR-coded points of interest across uneven, rocky terrain in the fastest time possible.
+        </p>
+        <p>
+            Led the system design, embedded control system, and simulation package. Architecture comprised a Flask web app for the UI, a Simulink control system implementing Ackermann steering for independently steered and driven wheels, and a CoppeliaSim simulation for validation.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Long-form sections ─────────────────────────────────── -->
+    <div class="case-sections">
+
+      <section class="case-section case-section--with-media">
+        <div class="case-section-body">
+          <h2>The Problem</h2>
+          <p>
+              Design a competition rover capable of traversing Airbus's Mars Yard, an uneven, sandy environment with rocks up to 40cm tall, and scan as many points of interest as possible in the fastest time. The rover would be operated remotely from a command centre at up to 30m range, replicating the constraints of a real space mission.
+          </p>
+          <p>
+              The terrain demanded a rover that could navigate around obstacles entirely through its onboard cameras, while also handling slopes of up to 30°. This meant manoeuvrability, reliable vision, and a control system robust enough to perform under competition pressure.
+          </p>
+        </div>
+        <div class="case-section-media">
+          <!-- TODO: replace placeholders with <img src="..." alt="..." /> -->
+            <img src="../assets/images/projects/rover/AirbusMarsYard.png" alt="Airbus's Mars yard">
+        </div>
+      </section>
+
+      <section class="case-section case-section--media-pairs">
+        <h2>The Approach</h2>
+
+        <div class="case-section-pair">
+          <div class="case-section-media">
+            <img src="../assets/images/projects/rover/v_model.webp" alt="Illustration of the V-model of design"/>
+          </div>
+          <div class="case-section-body">
+            <p>
+              Followed the V-model of design, beginning with defining clear requirements to inform system and subsystem specifications, each with quantifiable criteria validated through module, subsystem, and integration testing.
+            </p>
+          </div>
+        </div>
+
+        <div class="case-section-pair case-section-pair--media-right">
+          <div class="case-section-media">
+            <img src="../assets/images/projects/rover/simplified_rover_coppelia.png" alt="Capture from CoppeliaSim with a simplified rover for navigation testing"/>
+          </div>
+          <div class="case-section-body">
+            <p>
+              A key decision was the onboard navigation system, central to the rover's core objective. Given its importance, early testing used basic navigation mockups across simulations and RC cars to trial different camera configurations before committing to a design. This informed a final configuration of an elevated, forward-facing fixture with both zoomed and wide-angle cameras providing 360° coverage, complemented by a rear camera for reversing.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--with-media case-section--media-left">
+        <h2>Outcome</h2>
+        <div class="case-section-media">
+          <video src="../assets/images/projects/rover/Rover Demo Video (1).mp4" controls></video>
+        </div>
+        <div class="case-section-body">
+          <p>
+            Implemented control algorithms in Simulink for Ackermann steering and point-turn across six independently steered and driven wheels, tuning the PID controllers using the Ziegler-Nichols method. Built a CoppeliaSim environment replicating the Airbus Mars Yard, incorporating the Flask UI, embedded control system, and full CAD model into a complete simulation package for end-to-end validation.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ── Gallery ────────────────────────────────────────────── -->
+    <section class="case-gallery">
+      <h2>Gallery</h2>
+      <div class="case-gallery-grid">
+        <!-- TODO: replace placeholders with <img src="..." alt="..." /> -->
+        <img src="../assets/images/projects/rover/mars_yard_schematics.png" alt="Schematic of Airbus's Mars yard">
+        <img src="../assets/images/projects/rover/SteerAngleManoeuvre_edit.png" alt="Illustration of Ackermann steering on the rover">
+        <img src="../assets/images/projects/rover/FullArchitectureDiagram_edit.png" alt="System architecture diagram">
+      </div>
+    </section>
+
+    <!-- ── Pager ─────────────────────────────────────────────── -->
+    <nav class="case-nav">
+      <a href="../projects.html">← All projects</a>
+      <span class="disabled">Next project →</span>
+    </nav>
+
+  </article>
+
+  <footer class="footer">
+    <span>© 2026 Harry New</span>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/harry-new-02661025b/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/hnewey7" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
